@@ -4,4 +4,4 @@ services:
   web:
     image: "raocharan/myimage"
     ports:
-      - "9010:9010"
+      - "6000:6000"
