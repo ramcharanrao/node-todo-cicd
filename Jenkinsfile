@@ -22,8 +22,8 @@ pipeline {
         }
         stage("push"){
             steps{
-                withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
+                withCredentials([usernamePassword(credentialsId:"dockerhub",passwordVariable:"dockerhubPass",usernameVariable:"dockerhubUser")]){
+                sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPass}"
                 sh "docker tag raocharan/myimage raocharan/myimage"
                 sh "docker push raocharan/myimage"
                 echo 'image push ho gaya'
